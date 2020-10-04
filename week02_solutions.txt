@@ -1,0 +1,79 @@
+###week02_ex1_start_py
+- When `i` is a number object, `bool(i)` returns `False` if `i` is exactly zero, and `True`
+if `i` has a non-zero value.
+- When `i` is a string object, `bool(i)` returns `False` only if `i` is the **empty string**,
+and `True` if the string is not empty. The actual text in the string is not relevant --- to Python,
+it is just a list of characters.
+###week02_ex1_end
+
+###week02_ex2_start_py
+# Create the 2x2 identity matrix
+my_mat = [[1, 0], [0, 1]]
+
+# Append one element to the 2 existing rows
+my_mat[0].append(0)
+my_mat[1].append(0)
+
+# Append the 3rd row to the list of rows
+my_mat.append([0, 0, 1])
+###week02_ex2_end
+
+###week02_ex3_start_py
+m = ['a', 'b', 'c', 'd', 'e']
+m_back = m[::-1]
+print(m_back)
+###week02_ex3_end
+
+###week02_ex4_start_py
+# We can get pi from the math module
+import math
+
+# Create a list of n-1 ones
+n = 6
+my_list = [1] * (n-1)
+
+# Append pi, check length
+my_list.append(math.pi)
+print('Does the list have length n now?', len(my_list) == n)
+
+# Change the value of the 3rd element
+my_list[2] = sum(my_list[4:])
+print(my_list)
+###week02_ex4_end
+
+###week02_ex5_start_py
+###week02_ex5_end
+
+###week02_ex6_start_py
+# Set n and initialise P
+n = 20
+P = 1
+
+# Loop from j=2 to j=n
+for j in range(2, n+1):
+    # Multiply each term in succession
+    P *= j**3 + 5*j**2 - 3
+
+# Display the result
+print(P)
+###week02_ex6_end
+
+###week02_ex7_start_py
+def compute_P(n):
+    '''
+    Computes the product P for a value of n.
+    '''
+    # Initialise P
+    P = 1
+
+    # Loop from j=2 to j=n
+    for j in range(2, n+1):
+        # Multiply each term in succession
+        P *= j**3 + 5*j**2 - 3
+
+    # Return the result
+    return P
+
+# Test the function
+print(compute_P(7))
+###week02_ex7_end
